@@ -9,6 +9,7 @@ import android.widget.TextView
 import com.example.facturasmvc.databinding.ActivityFilterBinding
 import java.util.*
 
+@Suppress("DEPRECATION")
 class FilterActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener {
 
     private lateinit var binding: ActivityFilterBinding
@@ -25,7 +26,7 @@ class FilterActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener {
 
         // Botón de cancelar los filtros
         binding.cancelButton.setOnClickListener {
-            startActivity(Intent(this, MainActivity::class.java))
+            onBackPressed()
         }
 
         // Calendario

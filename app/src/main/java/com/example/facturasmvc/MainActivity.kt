@@ -26,7 +26,6 @@ class MainActivity : AppCompatActivity() {
     var recyclerView: RecyclerView? = null
     var adapter: AppAdapter? = null
     var layoutManager: LinearLayoutManager? = null
-    var dialog: AlertDialog? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,7 +41,7 @@ class MainActivity : AppCompatActivity() {
         Handler(Looper.getMainLooper()).postDelayed({
             llCargando.isVisible = false
             llContenedor.isVisible = true
-        }, 2000)
+        }, 6000)
 
         mainActivityViewModel = ViewModelProvider(this)[MainViewModel::class.java]
 
@@ -61,6 +60,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        // Abrir ventana filtros
         binding.botonFactura.setOnClickListener {
             startActivity(Intent(this, FilterActivity::class.java))
         }

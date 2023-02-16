@@ -5,15 +5,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.example.facturasmvc.databinding.ItemFacturaBinding
 
-class FacturaListAdapter(var context: Context, var facturaModelList: MutableList<Factura>):
-    RecyclerView.Adapter<FacturaListAdapter.MyViewModel>(){
+class AppAdapter(var context: Context, var datos: MutableList<Factura>):
+    RecyclerView.Adapter<AppAdapter.AppHolder>(){
 
     var onItemClick : ((Factura) -> Unit)? = null
 
-    inner class MyViewModel(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class AppHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var importe: TextView
         var date: TextView
         var estado: TextView
@@ -25,23 +27,23 @@ class FacturaListAdapter(var context: Context, var facturaModelList: MutableList
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewModel {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AppHolder {
         val inflador = LayoutInflater.from(parent.context)
         val binding = ItemFacturaBinding.inflate(inflador,parent,false)
-        return MyViewModel(LayoutInflater.from(context).inflate(R.layout.item_factura,parent,false))
+        return AppHolder(LayoutInflater.from(context).inflate(R.layout.item_factura,parent,false))
     }
 
-    override fun onBindViewHolder(holder: MyViewModel, position: Int) {
-        holder.importe.text = facturaModelList[position].importeOrdenacion.toString()
-        holder.estado.text = facturaModelList[position].descEstado
-        holder.date.text = facturaModelList[position].fecha
+    override fun onBindViewHolder(holder: AppHolder, position: Int) {
+        holder.importe.text = datos[position].importeOrdenacion.toString()
+        holder.estado.text = datos[position].descEstado
+        holder.date.text = datos[position].fecha
 
         // presionar en el contenedor del adapter
-        val factura = facturaModelList[position]
+        val factura = datos[position]
         holder.itemView.setOnClickListener{
             onItemClick?.invoke(factura)
         }
     }
 
-    override fun getItemCount(): Int = facturaModelList.size
+    override fun getItemCount(): Int = datos.size
 }

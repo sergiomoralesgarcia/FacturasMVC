@@ -1,11 +1,13 @@
 package com.example.facturasmvc
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
 import android.widget.LinearLayout
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.core.view.isVisible
 import androidx.lifecycle.ViewModelProvider
@@ -15,14 +17,14 @@ import com.example.facturasmvc.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-    private lateinit var adaptador: FacturaListAdapter
+    private lateinit var adaptador: AppAdapter
 
     lateinit var llContenedor: LinearLayout
     lateinit var llCargando: LinearLayout
 
     var mainActivityViewModel: MainViewModel? = null
     var recyclerView: RecyclerView? = null
-    var adapter: FacturaListAdapter? = null
+    var adapter: AppAdapter? = null
     var layoutManager: LinearLayoutManager? = null
     var dialog: AlertDialog? = null
 
@@ -40,7 +42,7 @@ class MainActivity : AppCompatActivity() {
         Handler(Looper.getMainLooper()).postDelayed({
             llCargando.isVisible = false
             llContenedor.isVisible = true
-        }, 9000)
+        }, 2000)
 
         mainActivityViewModel = ViewModelProvider(this)[MainViewModel::class.java]
 
@@ -53,10 +55,14 @@ class MainActivity : AppCompatActivity() {
             Log.e("MainActivity", "FacturaList: " +  facturaModels.get(0).fecha)
 
             if (facturaModels != null){
-                adapter = FacturaListAdapter(this, facturaModels)
+                adapter = AppAdapter(this, facturaModels)
                 adapter!!.notifyDataSetChanged()
                 recyclerView!!.adapter = adapter
             }
+        }
+
+        binding.botonFactura.setOnClickListener {
+            startActivity(Intent(this, FilterActivity::class.java))
         }
 
         // abrir popup presionando en el contenedor del recycler

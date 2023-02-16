@@ -7,12 +7,11 @@ import android.os.Handler
 import android.os.Looper
 import android.util.Log
 import android.widget.LinearLayout
-import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
 import androidx.core.view.isVisible
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.facturasmvc.database.MainViewModel
 import com.example.facturasmvc.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {

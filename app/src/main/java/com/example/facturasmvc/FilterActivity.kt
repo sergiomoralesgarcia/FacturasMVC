@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.SeekBar
 import android.widget.TextView
+import com.example.facturasmvc.entidades.Factura
 import com.example.facturasmvc.databinding.ActivityFilterBinding
 import java.util.*
 

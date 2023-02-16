@@ -1,4 +1,4 @@
-package com.example.facturasmvc
+package com.example.facturasmvc.database
 
 object Service {
     private const val BASE_URL = "https://private-4826e0-facturasviewnext.apiary-mock.com/"

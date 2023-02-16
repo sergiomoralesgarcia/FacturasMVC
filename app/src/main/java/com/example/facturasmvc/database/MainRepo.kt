@@ -1,20 +1,17 @@
-package com.example.facturasmvc
+package com.example.facturasmvc.database
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
+import com.example.facturasmvc.entidades.Factura
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 class MainRepo {
-    private val apiService: ApiInterface
+    private val apiService: ApiInterface = Service.getApiService
 
     companion object{
         private const val TAG = "MainRepo"
-    }
-
-    init {
-        apiService = Service.getApiService
     }
 
     val getFacturaModelLiveData: MutableLiveData<MutableList<Factura>>

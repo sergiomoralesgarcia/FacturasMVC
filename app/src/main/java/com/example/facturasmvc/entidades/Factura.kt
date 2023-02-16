@@ -1,4 +1,4 @@
-package com.example.facturasmvc
+package com.example.facturasmvc.entidades
 
 import androidx.room.Entity
 

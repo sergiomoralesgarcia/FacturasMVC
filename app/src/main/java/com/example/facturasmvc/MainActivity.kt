@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
         Handler(Looper.getMainLooper()).postDelayed({
             llCargando.isVisible = false
             llContenedor.isVisible = true
-        }, 6000)
+        }, 5000)
 
         mainActivityViewModel = ViewModelProvider(this)[MainViewModel::class.java]
 
@@ -65,7 +65,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         // abrir popup presionando en el contenedor del recycler
-        adapter?.onItemClick = {
+        this.adapter?.onItemClick = {
             val dialog = DetailActivity()
             dialog.show(supportFragmentManager, "customDialog")
         }

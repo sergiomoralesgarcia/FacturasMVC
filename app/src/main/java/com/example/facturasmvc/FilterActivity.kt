@@ -24,7 +24,6 @@ class FilterActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener {
 
         setContentView(binding.root)
 
-
         // Botón de cancelar los filtros
         binding.cancelButton.setOnClickListener {
             onBackPressed()
@@ -49,7 +48,6 @@ class FilterActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener {
             dpd.show()
             // fecha máxima que puedes seleccionar
             dpd.datePicker.maxDate = c.timeInMillis
-
         }
 
         binding.buttonDate2.setOnClickListener() {
@@ -65,7 +63,6 @@ class FilterActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener {
             dpd.show()
             // fecha máxima que puedes seleccionar
             dpd.datePicker.maxDate = c.timeInMillis
-
         }
 
         // Cambio progresivo de la cantidad del SeekBar

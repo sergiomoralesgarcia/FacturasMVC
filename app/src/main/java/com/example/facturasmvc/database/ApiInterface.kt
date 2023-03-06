@@ -6,6 +6,7 @@ import retrofit2.http.GET
 
 interface ApiInterface {
 
+    // llamada get a la libreria retrofit
     @GET("facturas")
     fun getData(): Call<MutableList<Factura>>
 }

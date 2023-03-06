@@ -65,7 +65,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         // abrir popup presionando en el contenedor del recycler
-        this.adapter?.onItemClick = {
+        adapter?.onItemClick = {
             val dialog = DetailActivity()
             dialog.show(supportFragmentManager, "customDialog")
         }

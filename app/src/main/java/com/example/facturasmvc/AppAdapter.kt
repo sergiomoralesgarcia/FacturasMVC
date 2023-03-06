@@ -11,8 +11,10 @@ import com.example.facturasmvc.entidades.Factura
 class AppAdapter(var context: Context, var datos: MutableList<Factura>):
     RecyclerView.Adapter<AppAdapter.AppHolder>(){
 
+    // variable para abrir el popup
     var onItemClick : ((Factura) -> Unit)? = null
 
+    // holder
     inner class AppHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var importe: TextView
         var date: TextView

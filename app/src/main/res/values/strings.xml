@@ -1,3 +1,40 @@
 <resources>
     <string name="app_name">FacturasMVC</string>
+
+    <!-- MainActivity -->
+    <string name="etq_tituloMain">Facturas</string>
+
+    <!-- item_facura -->
+    <string name="etq_fecha">10 Oct 2021</string>
+    <string name="etq_estado">pagada</string>
+    <string name="etq_importe">22</string>
+
+    <!-- DetailActivity -->
+    <string name="etq_tituloPopup">Información</string>
+    <string name="etq_textoPopup">Esta funcionalidad no está disponible</string>
+    <string name="etq_cerrarPopup">Cerrar</string>
+
+    <!-- FilterActivity -->
+    <string name="etq_tituloFilter">Filtrar facturas</string>
+
+    <string name="etq_tituloFechaFilter">Con fecha de emisión</string>
+    <string name="etq_desdeFechaFilter">Desde:</string>
+    <string name="etq_hastaFechaFilter">Hasta:</string>
+    <string name="etq_fechaFilter">dia/mes/año</string>
+
+    <string name="etq_tituloImporte">Por un importe</string>
+    <string name="etq_tituloImporte1">1€    -</string>
+    <string name="etq_tituloImporte2">75</string>
+    <string name="etq_importe1">1 €</string>
+    <string name="etq_importe2">100 €</string>
+
+    <string name="etq_tituloEstado">Por estado</string>
+    <string name="etq_estadoPagada">Pagadas</string>
+    <string name="etq_estadoAnulada">Anuladas</string>
+    <string name="etq_estadoFijo">Cuota fija</string>
+    <string name="etq_estadoPendiente">Pendientes de pago</string>
+    <string name="etq_estadoPlan">Plan de pago</string>
+
+    <string name="etq_aplicarFilter">Aplicar</string>
+    <string name="etq_eliminarFilter">eliminar filtros</string>
 </resources>

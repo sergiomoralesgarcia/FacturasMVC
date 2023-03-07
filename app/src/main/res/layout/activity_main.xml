@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
         android:layout_marginTop="44dp"
-        android:text="Facturas"
+        android:text="@string/etq_tituloMain"
         android:textColor="@color/black"
         android:textSize="40sp"
         android:textStyle="bold"

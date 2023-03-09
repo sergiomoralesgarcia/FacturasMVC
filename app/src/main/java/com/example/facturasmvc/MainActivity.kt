@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.facturasmvc.database.MainViewModel
 import com.example.facturasmvc.databinding.ActivityMainBinding
+import com.example.facturasmvc.entidades.Factura
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -40,7 +41,7 @@ class MainActivity : AppCompatActivity() {
         Handler(Looper.getMainLooper()).postDelayed({
             llCargando.isVisible = false
             llContenedor.isVisible = true
-        }, 5000)
+        }, 6000)
 
         mainActivityViewModel = ViewModelProvider(this)[MainViewModel::class.java]
 

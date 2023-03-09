@@ -1,14 +1,14 @@
 package com.example.facturasmvc
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.example.facturasmvc.entidades.Factura
 
-class AppAdapter(var context: Context, var datos: MutableList<Factura>):
+class AppAdapter(var context: MainActivity, var datos: MutableList<Factura>):
     RecyclerView.Adapter<AppAdapter.AppHolder>(){
 
     // variable para abrir el popup
@@ -19,11 +19,14 @@ class AppAdapter(var context: Context, var datos: MutableList<Factura>):
         var importe: TextView
         var date: TextView
         var estado: TextView
+        var container: ConstraintLayout? = null
+
 
         init {
             importe = itemView.findViewById(R.id.importeOrdenacion)
             date = itemView.findViewById(R.id.fecha)
             estado = itemView.findViewById(R.id.descEstado)
+            container = itemView.findViewById(R.id.itemContainer)
         }
     }
 

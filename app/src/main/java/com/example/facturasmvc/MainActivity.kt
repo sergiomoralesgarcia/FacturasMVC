@@ -1,5 +1,7 @@
 package com.example.facturasmvc
 
+import android.app.Activity
+import android.app.Instrumentation.ActivityResult
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,13 +9,18 @@ import android.os.Handler
 import android.os.Looper
 import android.util.Log
 import android.widget.LinearLayout
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.view.isVisible
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.facturasmvc.database.MainViewModel
+import com.example.facturasmvc.database.Retrofit
 import com.example.facturasmvc.databinding.ActivityMainBinding
 import com.example.facturasmvc.entidades.Factura
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -26,6 +33,16 @@ class MainActivity : AppCompatActivity() {
     var recyclerView: RecyclerView? = null
     var adapter: AppAdapter? = null
     var layoutManager: LinearLayoutManager? = null
+
+    private val startForResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult())
+    {result: androidx.activity.result.ActivityResult ->
+
+        /*if (result.resultCode == Activity.RESULT_OK){
+            GlobalScope.launch(Dispatchers.IO) {
+                val datos = Retrofit
+            }
+        }*/
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -70,5 +87,6 @@ class MainActivity : AppCompatActivity() {
             val dialog = DetailActivity()
             dialog.show(supportFragmentManager, "customDialog")
         }
+
     }
 }
